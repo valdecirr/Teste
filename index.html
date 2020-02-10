@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <title>Primeiro Projeto</title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="jquery-ui.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="bird-alert.css">
+    <link rel="stylesheet" href="main.css">
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery-ui.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="bird.alert.min.js"></script>
+    <script src="popper.min.js"></script>
+    <script src="paletizacao.js"></script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            LoadForm();
+        });
+
+    </script>
+
+
+</head>
+
+<body class="bg-light container">
+    <header style="margin-bottom: 20px;">
+        <!-- <div
+            style="background: #557F2A;padding:10px 0;box-shadow: 0 0 10px #000;top: 0;z-index: 5;width: 100%;transition: 0.2s all;">
+            <img src="../Local/img/logo_indumak_pb.png">
+        </div> -->
+
+    </header>
+
+    <div>
+        <div class="py-5 text-center">
+            <h2>Sistema de Paletização Indumak</h2>
+            <p class="lead">Escopo de Projeto <br>Informações do Cliente</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Dados do Cliente / Empresa</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="firstName">*Projeto</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <label for="lastName">*Revisão</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="lastName">*Resp. Informações</label>
+                            <input type="text" class="form-control" id="respInfor" placeholder="" value="" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="firstName">*Empresa</label>
+                            <input type="text" class="form-control" id="empresa" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="lastName">Segmento</label>
+                            <input type="text" class="form-control" id="segmento" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="lastName">Cidade</label>
+                            <input type="text" class="form-control" id="cidade" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-1 mb-3">
+                            <label for="lastName">UF</label>
+                            <input type="text" class="form-control" id="uf" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="lastName">Aprovação do Cliente</label>
+                            <input type="text" class="form-control" id="aprovcliente" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="lastName">Telefone</label>
+                            <input type="text" class="form-control" id="aprovcliente" placeholder="" value="" required>
+                        </div>
+                    </div>
+                </form>
+                <hr class="mb-4">
+                <h4 class="mb-3">Local de Instalação</h4>
+                <form class="needs-validation" novalidate>
+                    <h6>Se a área disponível não for suficiente para a instalação, qual lado poderá ser excedido?</h6>
+                    <div class="col-md-12 mb-3 form-check-inline">
+                        <div class="custom-control custom-radio">
+                            <input id="paredelateral" name="paymentMethod" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="paredelateral">Parede Lateral</label>
+                        </div>
+                        <div class="custom-control custom-radio custumize-radio">
+                            <input id="paredefrontal" name="paymentMethod" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="paredefrontal">Parede Frontal</label>
+                        </div>
+                        <div class="custom-control custom-radio custumize-radio">
+                            <input id="ambos" name="paymentMethod" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="ambos">Ambos</label>
+                        </div>
+                        <div class="custom-control custom-radio custumize-radio">
+                            <input id="nenhum" name="paymentMethod" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="nenhum">Nenhum</label>
+                        </div>
+                    </div>
+
+                    <h6 style="margin-top: 20px;">O cliente fornecerá o arquivo <b>.dwg</b> da planta?</h6>
+                    <div class="col-md-12 mb-3 form-check-inline">
+                        <div class="custom-control custom-radio">
+                            <input id="swgsim" name="selectdwg" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="swgsim">Sim</label>
+                        </div>
+                        <div class="custom-control custom-radio custumize-radio">
+                            <input id="swgnao" name="selectdwg" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="swgnao">Não</label>
+                        </div>
+                        <div class="custom-control custumize-radio" style="color: red;">
+                            <label for="swginf">A informação deve ser coletada e repassada através de um esboço.</label>
+                        </div>
+                    </div>
+
+                    <h6 style="margin-top: 20px;">Tensão Local</h6>
+                    <div class="col-md-12 mb-3 form-check-inline">
+                        <div class="custom-control custom-radio">
+                            <input id="v220" name="tensaoA" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="v220">220V</label>
+                        </div>
+                        <div class="custom-control custom-radio custumize-radio">
+                            <input id="v380" name="tensaoA" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="v380">380V</label>
+                        </div>
+                        <div class="custom-control custom-radio custumize-radio">
+                            <input id="v440" name="tensaoA" type="radio" class="custom-control-input">
+                            <label class="custom-control-label" for="v440">440V</label>
+                        </div>
+
+                    </div>
+                    <hr class="mb-4">
+                    <!-- <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="same-address">
+                        <label class="custom-control-label" for="same-address">Shipping address is the same as my
+                            billing address</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="save-info">
+                        <label class="custom-control-label" for="save-info">Save this information for next
+                            time</label>
+                    </div>
+                    <hr class="mb-4">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-name">Name on card</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                            <small class="text-muted">Full name as displayed on card</small>
+                            <div class="invalid-feedback">
+                                Name on card is required
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="cc-number">Credit card number</label>
+                            <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Credit card number is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-expiration">Expiration</label>
+                            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Expiration date required
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="cc-cvv">CVV</label>
+                            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Security code required
+                            </div>
+                        </div>
+                    </div> -->
+                    <hr class="mb-4">
+                    <button class="btn btn-primary" id="imprimir" style="float: right;">Continuar</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2017-2019 Company Name</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+        </footer>
+    </div>
+
+</body>
+
+
+</html>
