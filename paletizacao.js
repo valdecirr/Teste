@@ -30,7 +30,7 @@ function Alerta(texto) {
         msg: 'O Campo ' + texto +' é obrigatório',
         title: 'Notificação',
         className: 'error',
-        duration: 3000,
+        duration: 2000,
     });
 }
 
