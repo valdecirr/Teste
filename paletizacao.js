@@ -80,8 +80,8 @@ $(document).on('click', '#adicionarcampos', function () {
     } 
 
     $('#addcampos').append(
-        '<div class="custom-control custom-radio custumize-radio" style="float:left;" id="' + valortensao + '">' +
-        '<input   name="tensaoA" type="radio" class="custom-control-input">' +
+        '<div class="custom-control custom-radio custumize-radio" style="float:left;" >' +
+        '<input id="' + valortensao + '"  name="tensaoA" type="radio" class="custom-control-input">' +
         '<label class="custom-control-label" for="' + valortensao + '">' + valortensao + '</label>' +
         '</div>',
     )
