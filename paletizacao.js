@@ -28,9 +28,9 @@ function Alerta() {
     var birdAlert = new BirdAlert();
     birdAlert.notify({
         msg: 'O Campo' + texto +'é obrigatório',
-        title: 'Confirmação de Exclusão',
-        className: 'success',
-        duration: 200000,
+        title: 'Notificação',
+        className: 'error',
+        duration: 5000,
     });
 }
 
