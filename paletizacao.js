@@ -1,3 +1,5 @@
+var texto;
+
 function LoadForm() {
     // formID = GetURLParameter('GID');
     // LoadCurrentUser();
@@ -8,10 +10,10 @@ function LoadForm() {
 
 $(document).on('click', '#imprimir', function () {
 
-    if ($('#firstName').val() == "") {
-        var texto = "NOME";
-        Alerta(texto);
-        //$('#firstName').focus();
+    if ($('#nome').val() == "") {
+        texto = "NOME";
+        Alerta();
+        $('#nome').focus();
     } else if ($('#lastName').val() == "") {
         alert('Favor Informe um Nome!');
         $('#lastName').focus();
@@ -22,13 +24,13 @@ $(document).on('click', '#imprimir', function () {
 
 });
 
-function Alerta(texto) {
+function Alerta() {
     var birdAlert = new BirdAlert();
     birdAlert.notify({
         msg: 'O Campo' + texto +'é obrigatório',
         title: 'Confirmação de Exclusão',
         className: 'success',
-        duration: 3000,
+        duration: 20000,
     });
 }
 
