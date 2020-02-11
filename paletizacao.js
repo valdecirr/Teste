@@ -30,7 +30,7 @@ function Alerta() {
         msg: 'O Campo' + texto +'é obrigatório',
         title: 'Confirmação de Exclusão',
         className: 'success',
-        duration: 20000,
+        duration: 200000,
     });
 }
 
