@@ -30,16 +30,14 @@
             LoadForm();
         });
     </script>
-
-
 </head>
 
-<body class="container">
-    <header style="margin-bottom: 20px;">
-        <!-- <div
+<body class="container" style="border:1px solid rgba(112, 128, 144, 0.5);">
+    <header style="margin-bottom: 20px;margin-top: 10px;">
+        <div
             style="background: #557F2A;padding:10px 0;box-shadow: 0 0 10px #000;top: 0;z-index: 5;width: 100%;transition: 0.2s all;">
             <img src="logo_indumak_pb.png">
-        </div> -->
+        </div>
     </header>
 
     <div>
@@ -49,7 +47,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12 order-md-1">
+            <div class="col-md-12 order-md-1" style="margin-top: 20px;">
                 <h4 class="mb-3">Dados do Cliente / Empresa</h4>
                 <form>
                     <div class="row">
@@ -94,10 +92,12 @@
                         </div>
                     </div>
                 </form>
-                <hr class="mb-4">
-                <h4 class="mb-3">Local de Instalação</h4>
-                <form class="needs-validation" novalidate>
-                    <h6>Se a área disponível não for suficiente para a instalação, qual lado poderá ser excedido?</h6>
+                <!-- <hr class="mb-4"> -->
+
+                <h4 class="mb-3" style="margin-top: 20px;">Local de Instalação</h4>
+                <form class="needs-validation" style="margin-top: 20px;">
+                    <h6>Se a área disponível não for suficiente para a instalação, qual lado poderá ser excedido?
+                    </h6>
                     <div class="col-md-12 mb-3 form-check-inline">
                         <div class="custom-control custom-radio">
                             <input id="paredelateral" name="paymentMethod" type="radio" class="custom-control-input">
@@ -127,8 +127,9 @@
                             <input id="swgnao" name="selectdwg" type="radio" class="custom-control-input">
                             <label class="custom-control-label" for="swgnao">Não</label>
                         </div>
-                        <div class="custom-control custumize-radio" style="color: red;">
-                            <label for="swginf">A informação deve ser coletada e repassada através de um esboço.</label>
+                        <div class="custom-control custumize-radio" style="color: red;margin-top: 10px;">
+                            <label for="swginf">A informação deve ser coletada e repassada através de um
+                                esboço.</label>
                         </div>
                     </div>
 
@@ -146,23 +147,23 @@
                             <input id="v440" name="tensaoA" type="radio" class="custom-control-input">
                             <label class="custom-control-label" for="v440">440V</label>
                         </div>
-                        <div id="addcampos"></div>
-                       
+                        <div id="addcampos" style="width: 100%;"></div>
+
                     </div>
                     <div class="row">
-                    <div class=" custom-control">
-                        <label>Informe a Tensão</label>
-                        <input id="textotensao" class="form-control" type="text" style="width: 100px;">
+                        <div class=" custom-control">
+                            <label>Informe a Tensão</label>
+                            <input id="textotensao" class="form-control" type="text" style="width: 100px;">
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-primary" id="adicionarcampos"
+                                style="width: auto;height: 38px;font-size: 15px;text-align: center;margin-top: 30px;">Add</button>
+                        </div>
                     </div>
-                    <div>
-                        <button type="button" class="btn btn-primary" id="adicionarcampos"
-                            style="width: auto;height: 38px;font-size: 15px;text-align: center;margin-top: 30px;">Add</button>
-                    </div>
-                </div>
+                </form>
 
-
-                    <hr class="mb-4">
-                    <!-- <div class="custom-control custom-checkbox">
+                <!-- <hr class="mb-4"> -->
+                <!-- <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="same-address">
                         <label class="custom-control-label" for="same-address">Shipping address is the same as my
                             billing address</label>
@@ -207,19 +208,19 @@
                             </div>
                         </div>
                     </div> -->
-                    <hr class="mb-4">
-                    <button type="button" class="btn btn-primary" id="imprimir" style="float: right;">Continuar</button>
+                <hr class="mb-4">
+                <button type="button" class="btn btn-primary" id="imprimir" style="float: right;">Continuar</button>
                 </form>
             </div>
         </div>
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
-            <p class="mb-1">&copy; 2017-2019 Company Name</p>
+            <!-- <p class="mb-1">&copy; 2017-2019 Company Name</p>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="#">Privacy</a></li>
                 <li class="list-inline-item"><a href="#">Terms</a></li>
                 <li class="list-inline-item"><a href="#">Support</a></li>
-            </ul>
+            </ul> -->
         </footer>
     </div>
 
