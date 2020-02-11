@@ -33,6 +33,39 @@
 </head>
 
 <body class="container" style="border:1px solid rgba(112, 128, 144, 0.5);">
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Inclusão de Tensão ao Relatório</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="custom-control">
+                        <label>Informe a Tensão</label>
+                        <input id="textotensao" class="form-control" type="text" style="width: 100px;">
+                    </div>
+                </div>
+                <div style="margin: 10px;">
+                    <button type="button" class="btn btn-danger" style="float: left;" data-dismiss="modal"
+                        id="btnCancel">Cancelar</button>
+                    <button type="button" id="adicionarcampos" class="btn btn-success" style="float: right;"
+                        data-dismiss="modal">Alterar</button>
+
+                    <!-- data-dismiss="modal" -->
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer" style="text-align: center;">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
     <header style="margin-bottom: 20px;margin-top: 10px;">
         <div
             style="background: #557F2A;padding:10px 0;box-shadow: 0 0 10px #000;top: 0;z-index: 5;width: 100%;transition: 0.2s all;">
@@ -135,29 +168,26 @@
 
                     <h6 style="margin-top: 20px;">Tensão Local</h6>
                     <div class="col-md-12 mb-3 form-check-inline">
-                        <div class="custom-control custom-radio">
-                            <input id="v220" name="tensaoA" type="radio" class="custom-control-input">
+                        <div class="custom-control custom-radio" id="v220">
+                            <input name="tensaoA" type="radio" class="custom-control-input">
                             <label class="custom-control-label" for="v220">220V</label>
                         </div>
-                        <div class="custom-control custom-radio custumize-radio">
-                            <input id="v380" name="tensaoA" type="radio" class="custom-control-input">
+                        <div class="custom-control custom-radio custumize-radio" id="v380">
+                            <input name="tensaoA" type="radio" class="custom-control-input">
                             <label class="custom-control-label" for="v380">380V</label>
                         </div>
-                        <div class="custom-control custom-radio custumize-radio">
-                            <input id="v440" name="tensaoA" type="radio" class="custom-control-input">
+                        <div class="custom-control custom-radio custumize-radio" id="v440">
+                            <input name="tensaoA" type="radio" class="custom-control-input">
                             <label class="custom-control-label" for="v440">440V</label>
                         </div>
                         <div id="addcampos" style="width: 100%;"></div>
-
                     </div>
+
                     <div class="row">
                         <div class=" custom-control">
-                            <label>Informe a Tensão</label>
-                            <input id="textotensao" class="form-control" type="text" style="width: 100px;">
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-primary" id="adicionarcampos"
-                                style="width: auto;height: 38px;font-size: 15px;text-align: center;margin-top: 30px;">Add</button>
+                            <a href="" data-toggle="modal" data-target="#myModal">
+                                <label><u>Clique para adicionar uma nova Tensão</u></label>
+                            </a>
                         </div>
                     </div>
                 </form>
