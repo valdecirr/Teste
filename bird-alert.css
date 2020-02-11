@@ -65,3 +65,21 @@
 	background: #c8f2ff;
 	color: #366872;
 }
+
+#sideNavBox{
+    display: none !important;
+}
+
+#contentBox{
+    margin-right: 20px !important;
+    margin-left: 20px !important;
+    min-width: 0px !important;
+}
+
+#pageTitle{
+    display: none !important;
+}
+
+#DeltaPageStatusBar{
+    display: none !important;
+}
