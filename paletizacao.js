@@ -28,7 +28,7 @@ function Alerta(texto) {
         msg: 'O campo <b>' + texto + '</b> é obrigatório',
         title: 'Atenção',
         className: 'error',
-        duration: 5000,
+       // duration: 20000,
     });
 }
 
