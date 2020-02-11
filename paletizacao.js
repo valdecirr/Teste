@@ -27,11 +27,13 @@ $(document).on('click', '#imprimir', function () {
 function Alerta(texto) {
     var birdAlert = new BirdAlert();
     birdAlert.notify({
-        msg: 'O Campo ' + texto +' é obrigatório',
+        msg: 'O Campo ' + texto + ' é obrigatório',
         title: 'Notificação',
         className: 'error',
         duration: 2000,
     });
+
+    return false
 }
 
 function LoadUF() {
@@ -65,4 +67,24 @@ $(document).on('change', '#uf', function () {
 
     });
 
+})
+
+$(document).on('click', '#adicionarcampos', function () {
+    var valortensao = $('#textotensao').val();
+
+    if (valortensao == "" || valortensao == null) {
+        texto = "TENSÃO";
+        Alerta(texto);
+        $('#textotensao').focus();
+        return false;
+    } 
+
+    $('#addcampos').append(
+        '<div class="custom-control custom-radio custumize-radio">' +
+        '<input  id="' + valortensao + '" name="tensaoA" type="radio" class="custom-control-input">' +
+        '<label class="custom-control-label" for="' + valortensao + '">' + valortensao + '</label>' +
+        '</div>',
+    )
+
+    $('#textotensao').val('')
 })
