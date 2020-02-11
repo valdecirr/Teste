@@ -9,9 +9,9 @@ function LoadForm() {
 $(document).on('click', '#imprimir', function () {
 
     if ($('#firstName').val() == "") {
-        let texto = "NOME";
+        var texto = "NOME";
         Alerta(texto);
-        $('#firstName').focus();
+        //$('#firstName').focus();
     } else if ($('#lastName').val() == "") {
         alert('Favor Informe um Nome!');
         $('#lastName').focus();
@@ -25,10 +25,10 @@ $(document).on('click', '#imprimir', function () {
 function Alerta(texto) {
     var birdAlert = new BirdAlert();
     birdAlert.notify({
-        msg: 'O campo <b>' + texto + '</b> é obrigatório',
-        title: 'Atenção',
-        className: 'error',
-       // duration: 20000,
+        msg: 'O Campo' + texto +'é obrigatório',
+        title: 'Confirmação de Exclusão',
+        className: 'success',
+        duration: 3000,
     });
 }
 
