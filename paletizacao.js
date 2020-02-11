@@ -43,7 +43,7 @@ function LoadUF() {
 
 }
 
-$(document).on('change','#uf',function(){
+$(document).on('change', '#uf', function () {
 
     let uflocal = $('#uf').val();
 
@@ -51,16 +51,16 @@ $(document).on('change','#uf',function(){
     AddDropDownItem('cidade', '', '');
 
     UF.forEach(function (item) {
-        if(uflocal == item.nome){
-            uflocal = item.codigo_uf;
+        if (uflocal == item.uf) {
+            uflocal = item.codigo_uf
         }
     });
 
     Municipio.forEach(function (item) {
-        if(uflocal == item.codigo_ibge){
+        if (uflocal == item.codigo_uf) {
             AddDropDownItem('cidade', item.nome, item.nome)
         }
-        
+
     });
 
 })
