@@ -1,9 +1,6 @@
-
-
-
 function LoadForm() {
-	// formID = GetURLParameter('GID');
-	// LoadCurrentUser();
+    // formID = GetURLParameter('GID');
+    // LoadCurrentUser();
 
     // login = SiteUser.Name;
 }
@@ -31,5 +28,18 @@ function Alerta(texto) {
         title: 'Atenção',
         className: 'error',
         duration: 5000,
-    });          
+    });
 }
+
+function LoadUF() {
+
+    $('#uf').empty();
+    AddDropDownItem('uf', '', '');
+
+    UF.forEach(function (item) {
+        AddDropDownItem('uf', item.uf, item.uf)
+    });
+
+}
+
+$(document).on()
