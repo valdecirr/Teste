@@ -10,10 +10,10 @@ function LoadForm() {
 
 $(document).on('click', '#imprimir', function () {
 
-    if ($('#nome').val() == "") {
-        texto = "NOME";
-        Alerta();
-        $('#nome').focus();
+    if ($('#projeto').val() == "") {
+        texto = "PROJETO";
+        Alerta(texto);
+        $('#projeto').focus();
     } else if ($('#lastName').val() == "") {
         alert('Favor Informe um Nome!');
         $('#lastName').focus();
@@ -24,13 +24,13 @@ $(document).on('click', '#imprimir', function () {
 
 });
 
-function Alerta() {
+function Alerta(texto) {
     var birdAlert = new BirdAlert();
     birdAlert.notify({
-        msg: 'O Campo' + texto +'é obrigatório',
+        msg: 'O Campo ' + texto +' é obrigatório',
         title: 'Notificação',
         className: 'error',
-        duration: 5000,
+        duration: 3000,
     });
 }
 
