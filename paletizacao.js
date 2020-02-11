@@ -1,8 +1,9 @@
 function LoadForm() {
     // formID = GetURLParameter('GID');
     // LoadCurrentUser();
-
     // login = SiteUser.Name;
+
+    LoadUF();
 }
 
 $(document).on('click', '#imprimir', function () {
@@ -42,4 +43,24 @@ function LoadUF() {
 
 }
 
-$(document).on()
+$(document).on('change','#uf',function(){
+
+    let uflocal = $('#uf').val();
+
+    $('#cidade').empty();
+    AddDropDownItem('cidade', '', '');
+
+    UF.forEach(function (item) {
+        if(uflocal == item.nome){
+            uflocal = item.codigo_uf;
+        }
+    });
+
+    Municipio.forEach(function (item) {
+        if(uflocal == item.codigo_ibge){
+            AddDropDownItem('cidade', item.nome, item.nome)
+        }
+        
+    });
+
+})
