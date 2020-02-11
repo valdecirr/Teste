@@ -77,7 +77,7 @@ $(document).on('click', '#adicionarcampos', function () {
         Alerta(texto);
         $('#textotensao').focus();
         return false;
-    } 
+    }
 
     $('#addcampos').append(
         '<div class="custom-control custom-radio custumize-radio" style="float:left;" >' +
@@ -89,13 +89,26 @@ $(document).on('click', '#adicionarcampos', function () {
     $('#textotensao').val('')
 })
 
-$(document).on('click','#btnCancel',function(){
-
+$(document).on('click', '#btnCancel', function () {
     $('#textotensao').val('');
-
 })
 
-function deletarTensao(){
+$(document).on('click', '#swgsim', function () {
+    $('#textoinfo').html(
+        '<div class = "custom-control custumize-radio" style = "color: red;margin-top: 10px;float:left" > ' +
+        '<label for="swginf">A informação deve ser coletada e repassada através de um esboço.</label>' +
+        '</div>',
+    );
+})
+
+$(document).on('click', '#swgnao', function () {
+    $('#textoinfo').html('');
+})
+
+
+
+
+function deletarTensao() {
 
 
 
