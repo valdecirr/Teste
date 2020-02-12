@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="bird-alert.css">
     <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="all.css">
     <link rel="stylesheet" href="main.css">
 
     <script src="jquery.min.js"></script>
@@ -20,6 +21,7 @@
     <script src="bootstrap.min.js"></script>
     <script src="popper.min.js"></script>
     <script src="bird-alert.min.js"></script>
+    <script src="all.js"></script>
     <script src="tools.js"></script>
     <script src="ufmunicipio.js"></script>
     <script src="paletizacao.js"></script>
@@ -33,6 +35,7 @@
 </head>
 
 <body class="container" style="border:1px solid rgba(112, 128, 144, 0.5);">
+    <!-- Modal para notificação -->
     <div class="modal" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -66,6 +69,36 @@
             </div>
         </div>
     </div>
+    <!-- Modal para Info -->
+    <div class="modal" id="myModalInf">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Projeto</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="custom-control">
+                        <label>Informar o projeto em questão</label>
+                    </div>
+                </div>
+                <div style="margin: 10px;">
+                    <button type="button" class="btn btn-danger" style="float: left;" data-dismiss="modal"
+                        id="btnCancelInf">Cancelar</button>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer" style="text-align: center;">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <header style="margin-bottom: 20px;">
         <div
             style="background: #557F2A;padding:10px 0;box-shadow: 0 0 10px #000;top: 0;z-index: 5;width: 100%;transition: 0.2s all;">
@@ -73,126 +106,128 @@
         </div>
     </header>
 
-    <div>
-        <div class="text-center">
-            <h2>Sistema de Paletização Indumak</h2>
-            <p class="lead">Escopo de Projeto <br>Informações do Cliente</p>
-        </div>
 
-        <div class="row">
-            <div class="col-md-12 order-md-1" style="margin-top: 20px;">
-                <h4 class="mb-3">Dados do Cliente / Empresa</h4>
-                <form>
-                    <div class="row">
-                        <div class="col-md-3 mb-3">
-                            <label for="projeto">*Projeto</label>
-                            <input type="text" class="form-control" id="projeto" placeholder="">
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="lastName">*Revisão</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="">
-                        </div>
-                        <div class="col-md-5 mb-3">
-                            <label for="lastName">*Resp. Informações</label>
-                            <input type="text" class="form-control" id="respInfor" placeholder="">
-                        </div>
+    <div class="text-center">
+        <h2>Sistema de Paletização Indumak</h2>
+        <p class="lead">Escopo de Projeto <br>Informações do Cliente</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 order-md-1" style="margin-top: 20px;">
+            <h4 class="mb-3">Dados do Cliente / Empresa</h4>
+            <form>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="projeto">*Projeto <a href="" data-toggle="modal" data-target="#myModalInf"><span><i
+                                        id="infA" style="color:blue;"
+                                        class="far fa-question-circle "></i></span></a></label>
+                        <input type="text" class="form-control" id="projeto" placeholder="">
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-3 mb-3">
-                            <label for="firstName">*Empresa</label>
-                            <input type="text" class="form-control" id="empresa" placeholder="">
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="lastName">Segmento</label>
-                            <input type="text" class="form-control" id="segmento" placeholder="">
-                        </div>
-                        <div class="col-md-1 mb-3">
-                            <label for="lastName">UF</label>
-                            <select type="text" class="form-control" id="uf" placeholder=""></select>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            <label for="lastName">Cidade</label>
-                            <select type="text" class="form-control" id="cidade" placeholder=""></select>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="lastName">Aprovação do Cliente</label>
-                            <input type="text" class="form-control" id="aprovcliente" placeholder="">
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="lastName">Telefone</label>
-                            <input type="text" class="form-control" id="aprovclientes" placeholder="">
-                        </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="lastName">*Revisão</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="">
                     </div>
-                </form>
-                <!-- <hr class="mb-4"> -->
-
-                <h4 class="mb-3" style="margin-top: 20px;">Local de Instalação</h4>
-                <form class="needs-validation" style="margin-top: 20px;">
-                    <h6>Se a área disponível não for suficiente para a instalação, qual lado poderá ser excedido?
-                    </h6>
-                    <div class="col-md-12 mb-3 form-check-inline">
-                        <div class="custom-control custom-radio">
-                            <input id="paredelateral" name="paymentMethod" type="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="paredelateral">Parede Lateral</label>
-                        </div>
-                        <div class="custom-control custom-radio custumize-radio">
-                            <input id="paredefrontal" name="paymentMethod" type="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="paredefrontal">Parede Frontal</label>
-                        </div>
-                        <div class="custom-control custom-radio custumize-radio">
-                            <input id="ambos" name="paymentMethod" type="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="ambos">Ambos</label>
-                        </div>
-                        <div class="custom-control custom-radio custumize-radio">
-                            <input id="nenhum" name="paymentMethod" type="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="nenhum">Nenhum</label>
-                        </div>
+                    <div class="col-md-5 mb-3">
+                        <label for="lastName">*Resp. Informações</label>
+                        <input type="text" class="form-control" id="respInfor" placeholder="">
                     </div>
+                </div>
 
-                    <h6 style="margin-top: 20px;">O cliente fornecerá o arquivo <b>.dwg</b> da planta?</h6>
-                    <div class="col-md-12 mb-3 form-check-inline">
-                        <div class="custom-control custom-radio">
-                            <input id="swgsim" name="selectdwg" type="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="swgsim">Sim</label>
-                        </div>
-                        <div class="custom-control custom-radio custumize-radio">
-                            <input id="swgnao" name="selectdwg" type="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="swgnao">Não</label>
-                        </div>
-                        <div id="textoinfo">
-
-                        </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="firstName">*Empresa</label>
+                        <input type="text" class="form-control" id="empresa" placeholder="">
                     </div>
-
-                    <h6 style="margin-top: 20px;">Tensão Local</h6>
-                    <div class="col-md-12 mb-3 form-check-inline">
-                        <div class="custom-control custom-radio">
-                            <input id="v220" name="tensaoA" type="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="v220">220V</label>
-                        </div>
-                        <div class="custom-control custom-radio custumize-radio">
-                            <input id="v380" name="tensaoA" type="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="v380">380V</label>
-                        </div>
-                        <div class="custom-control custom-radio custumize-radio">
-                            <input id="v440" name="tensaoA" type="radio" class="custom-control-input">
-                            <label class="custom-control-label" for="v440">440V</label>
-                        </div>
-                        <div id="addcampos" style="width: 100%;"></div>
+                    <div class="col-md-3 mb-3">
+                        <label for="lastName">Segmento</label>
+                        <input type="text" class="form-control" id="segmento" placeholder="">
                     </div>
-
-                    <div class="row">
-                        <div class=" custom-control">
-                            <a href="" data-toggle="modal" data-target="#myModal">
-                                <label><u>Clique para adicionar uma nova Tensão</u></label>
-                            </a>
-                        </div>
+                    <div class="col-md-1 mb-3">
+                        <label for="lastName">UF</label>
+                        <select type="text" class="form-control" id="uf" placeholder=""></select>
                     </div>
-                </form>
+                    <div class="col-md-4 mb-3">
+                        <label for="lastName">Cidade</label>
+                        <select type="text" class="form-control" id="cidade" placeholder=""></select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="lastName">Aprovação do Cliente</label>
+                        <input type="text" class="form-control" id="aprovcliente" placeholder="">
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="lastName">Telefone</label>
+                        <input type="text" class="form-control" id="aprovclientes" placeholder="">
+                    </div>
+                </div>
+            </form>
+            <!-- <hr class="mb-4"> -->
 
-                <!-- <hr class="mb-4"> -->
-                <!-- <div class="custom-control custom-checkbox">
+            <h4 class="mb-3" style="margin-top: 20px;">Local de Instalação</h4>
+            <form class="needs-validation" style="margin-top: 20px;">
+                <h6>Se a área disponível não for suficiente para a instalação, qual lado poderá ser excedido?
+                </h6>
+                <div class="col-md-12 mb-3 form-check-inline">
+                    <div class="custom-control custom-radio">
+                        <input id="paredelateral" name="paymentMethod" type="radio" class="custom-control-input">
+                        <label class="custom-control-label" for="paredelateral">Parede Lateral</label>
+                    </div>
+                    <div class="custom-control custom-radio custumize-radio">
+                        <input id="paredefrontal" name="paymentMethod" type="radio" class="custom-control-input">
+                        <label class="custom-control-label" for="paredefrontal">Parede Frontal</label>
+                    </div>
+                    <div class="custom-control custom-radio custumize-radio">
+                        <input id="ambos" name="paymentMethod" type="radio" class="custom-control-input">
+                        <label class="custom-control-label" for="ambos">Ambos</label>
+                    </div>
+                    <div class="custom-control custom-radio custumize-radio">
+                        <input id="nenhum" name="paymentMethod" type="radio" class="custom-control-input">
+                        <label class="custom-control-label" for="nenhum">Nenhum</label>
+                    </div>
+                </div>
+
+                <h6 style="margin-top: 20px;">O cliente fornecerá o arquivo <b>.dwg</b> da planta?</h6>
+                <div class="col-md-12 mb-3 form-check-inline">
+                    <div class="custom-control custom-radio">
+                        <input id="swgsim" name="selectdwg" type="radio" class="custom-control-input">
+                        <label class="custom-control-label" for="swgsim">Sim</label>
+                    </div>
+                    <div class="custom-control custom-radio custumize-radio">
+                        <input id="swgnao" name="selectdwg" type="radio" class="custom-control-input">
+                        <label class="custom-control-label" for="swgnao">Não</label>
+                    </div>
+                    <div id="textoinfo">
+
+                    </div>
+                </div>
+
+                <h6 style="margin-top: 20px;">Tensão Local</h6>
+                <div class="col-md-12 mb-3 form-check-inline">
+                    <div class="custom-control custom-radio">
+                        <input id="v220" name="tensaoA" type="radio" class="custom-control-input">
+                        <label class="custom-control-label" for="v220">220V</label>
+                    </div>
+                    <div class="custom-control custom-radio custumize-radio">
+                        <input id="v380" name="tensaoA" type="radio" class="custom-control-input">
+                        <label class="custom-control-label" for="v380">380V</label>
+                    </div>
+                    <div class="custom-control custom-radio custumize-radio">
+                        <input id="v440" name="tensaoA" type="radio" class="custom-control-input">
+                        <label class="custom-control-label" for="v440">440V</label>
+                    </div>
+                    <div id="addcampos" style="width: 100%;"></div>
+                </div>
+
+                <div class="row">
+                    <div class=" custom-control">
+                        <a href="" data-toggle="modal" data-target="#myModal">
+                            <label><u>Clique para adicionar uma nova Tensão</u></label>
+                        </a>
+                    </div>
+                </div>
+            </form>
+
+            <!-- <hr class="mb-4"> -->
+            <!-- <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="same-address">
                         <label class="custom-control-label" for="same-address">Shipping address is the same as my
                             billing address</label>
@@ -237,23 +272,23 @@
                             </div>
                         </div>
                     </div> -->
-                <!-- <hr class="mb-4"> -->
-                <div>
+            <!-- <hr class="mb-4"> -->
+            <div>
                 <button type="button" class="btn btn-primary" id="imprimir" style="float: right;">Continuar</button>
             </div>
-                </form>
-            </div>
+            </form>
         </div>
+    </div>
 
-        <!-- <footer class="my-5 pt-5 text-muted text-center text-small"> -->
-            <!-- <p class="mb-1">&copy; 2017-2019 Company Name</p>
+    <!-- <footer class="my-5 pt-5 text-muted text-center text-small"> -->
+    <!-- <p class="mb-1">&copy; 2017-2019 Company Name</p>
             <ul class="list-inline">
                 <li class="list-inline-item"><a href="#">Privacy</a></li>
                 <li class="list-inline-item"><a href="#">Terms</a></li>
                 <li class="list-inline-item"><a href="#">Support</a></li>
             </ul> -->
-        <!-- </!--> 
-    </div>
+    <!-- </!-->
+
 
 </body>
 
